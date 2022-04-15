@@ -3,6 +3,13 @@ module.exports = {
     browser: true,
     es2021: true,
   },
+  settings: {
+    'import/resolver': {
+      node: {
+        extensions: ['.js', '.jsx', '.ts', '.tsx'],
+      },
+    },
+  },
   extends: [
     'plugin:react/recommended',
     'airbnb',
@@ -20,7 +27,11 @@ module.exports = {
     '@typescript-eslint',
   ],
   rules: {
+    'import/extensions': ['error', 'ignorePackages', {
+      tsx: 'never',
+    }],
     'react/react-in-jsx-scope': 'off',
     'react/jsx-filename-extension': 0,
+    'react/function-component-definition': [2, { namedComponents: 'arrow-function' }],
   },
 };
