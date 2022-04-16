@@ -1,14 +1,15 @@
 import * as THREE from 'three';
 import React, { useRef, useState } from 'react';
-import { useFrame, Vector3 } from '@react-three/fiber';
+import { Vector3 } from '@react-three/fiber';
+import { RoundedBox } from '@react-three/drei';
 
-const Box: React.FC<{position: Vector3}> = ({ position }) => {
+const Card: React.FC<{position: Vector3}> = ({ position }) => {
   const mesh = useRef<THREE.Mesh>(null!);
   const [hovered, setHover] = useState(false);
   const [active, setActive] = useState(false);
-  useFrame(() => { mesh.current.rotation.x += 0.01; });
   return (
-    <mesh
+    <RoundedBox
+      args={[3.5, 2, 0.1]}
       position={position}
       ref={mesh}
       scale={active ? 1.5 : 1}
@@ -16,10 +17,9 @@ const Box: React.FC<{position: Vector3}> = ({ position }) => {
       onPointerOver={() => setHover(true)}
       onPointerOut={() => setHover(false)}
     >
-      <boxGeometry args={[1, 1, 1]} />
       <meshStandardMaterial color={hovered ? 'hotpink' : 'orange'} />
-    </mesh>
+    </RoundedBox>
   );
 };
 
-export default Box;
+export default Card;
