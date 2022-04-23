@@ -31,6 +31,7 @@ module.exports = {
       tsx: 'never',
       ts: 'never',
     }],
+    'linebreak-style': 0,
     'react/react-in-jsx-scope': 'off',
     'react/jsx-filename-extension': 0,
     'react/function-component-definition': [2, { namedComponents: 'arrow-function' }],
