@@ -1,17 +1,15 @@
 import React from 'react';
-import { Vector3 } from '@react-three/fiber';
 import { RoundedBox } from '@react-three/drei';
 
 interface ICard {
-  position: Vector3
   color: string
 }
 
-const Card: React.FC<ICard> = ({ position, color = '#f3f3f3' }) => (
+const Card: React.FC<ICard> = ({ color = '#f3f3f3' }) => (
   <RoundedBox
-    args={[3.5, 2, 0.1]}
+    args={[3.5, 2, 0.05]}
     rotation={[0, 0, 0]}
-    position={position}
+    position={[0, 0, 0]}
   >
     <meshStandardMaterial color={color} />
   </RoundedBox>

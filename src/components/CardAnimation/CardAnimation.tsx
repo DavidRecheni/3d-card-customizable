@@ -26,7 +26,7 @@ const CardAnimation: React.FC<ICardAnimation> = ({
       />
       <ambientLight />
       <pointLight position={[10, 10, 10]} />
-      <Card position={[0, 0, 0]} color={color} />
+      <Card color={color} />
       <Text
         font={UbuntuMono}
         position={[-0.8, -0.7, 0.06]}
