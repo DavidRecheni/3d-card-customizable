@@ -33,6 +33,7 @@ module.exports = {
     }],
     'linebreak-style': 0,
     'react/react-in-jsx-scope': 'off',
+    'react/prop-types': 0,
     'react/jsx-filename-extension': 0,
     'react/function-component-definition': [2, { namedComponents: 'arrow-function' }],
   },
